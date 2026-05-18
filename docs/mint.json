@@ -9,6 +9,20 @@
     },
     "navigation": [
         {
+            "group": "Inicio",
+            "pages": [
+                "introduction"
+            ]
+        },
+        {
+            "group": "Guías",
+            "pages": [
+                "models",
+                "errores",
+                "docker"
+            ]
+        },
+        {
             "group": "API Reference",
             "pages": [
                 "api-reference/autores/list",
@@ -20,13 +34,9 @@
         "openapi.json"
     ],
     "api": {
-        "baseUrl": [
-            "http://localhost:4040",
-            "https://placeholder.trycloudflare.com"
-        ],
+        "baseUrl": "http://localhost:4040",
         "playground": {
-            "mode": "show",
-            "disableProxy": true
+            "mode": "show"
         }
     }
 }
