@@ -1,0 +1,41 @@
+
+---
+title: "Manejo de errores"
+description: "Estructura estándar de errores y códigos"
+icon: "triangle-exclamation"
+---
+
+## Estructura
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Mensaje descriptivo"
+  }
+}
+```
+
+## Códigos HTTP
+
+| Status | Significado |
+|---|---|
+| `200` | OK |
+| `201` | Created |
+| `400` | Body/parámetros inválidos o conflicto de negocio |
+| `404` | Recurso no existe o ruta no registrada |
+| `500` | Error interno inesperado |
+
+## Catálogo de `error.code`
+
+| `error.code` | HTTP | Causa |
+|---|---|---|
+| `INVALID_ID` | 400 | `id` no es entero positivo |
+| `INVALID_BODY` | 400 | Body con campos faltantes o tipos incorrectos |
+| `AUTOR_NOT_FOUND` | 404 / 400 | Autor inexistente |
+| `AUTOR_HAS_BOOKS` | 400 | Eliminar autor con libros (FK RESTRICT) |
+| `LIBRO_NOT_FOUND` | 404 | Libro inexistente |
+| `ISBN_DUPLICATE` | 400 | ISBN ya existe (UNIQUE) |
+| `ROUTE_NOT_FOUND` | 404 | Ruta no registrada |
+| `*_ERROR` | 500 | Error interno |

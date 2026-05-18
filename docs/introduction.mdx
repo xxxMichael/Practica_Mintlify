@@ -1,0 +1,37 @@
+---
+title: "Introducción"
+description: "Visión general de la API de Librería: stack, recursos y endpoints base."
+---
+
+# Librería API
+
+**Librería API** es una API REST para gestionar autores y libros.
+
+Está construida con **Node.js + Express**, usa **Sequelize** como ORM y **PostgreSQL** como base de datos.  
+El entorno se ejecuta con **Docker Compose** y expone documentación mediante **OpenAPI/Swagger**.
+
+<Card title="Base URL local" icon="globe">
+  `http://localhost:4040`
+</Card>
+
+## Qué permite esta API
+
+- CRUD de **autores**.
+- CRUD de **libros**.
+- Relación libro → autor mediante `autor_id`.
+- Consumo y prueba de endpoints desde Swagger.
+
+## Recursos principales
+
+- **Autores**: personas que escriben libros.
+- **Libros**: obras del catálogo asociadas a un autor.
+
+## Endpoints base
+
+- `GET /health` — estado del servicio.
+- `GET /api-docs` — Swagger UI.
+- `GET /api-docs.json` — OpenAPI en JSON.
+
+<Note>
+Esta documentación está orientada a uso local y pruebas de desarrollo con Docker.
+</Note>

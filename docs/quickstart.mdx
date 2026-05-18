@@ -1,0 +1,37 @@
+---
+title: "Quickstart"
+description: "Levanta la API en local con Docker Compose"
+icon: "rocket"
+---
+
+## Requisitos
+
+- Docker Desktop o Docker Engine + Compose v2
+
+## Pasos
+
+```bash
+docker compose up --build
+```
+
+Cuando veas `API escuchando en puerto 4040`, prueba:
+
+```bash
+curl http://localhost:4040/health
+```
+
+## Variables de entorno
+
+| Variable | Valor por defecto | Descripción |
+|---|---|---|
+| `PORT` | `4040` | Puerto HTTP de Express |
+| `DB_HOST` | `db` | Hostname del contenedor de Postgres |
+| `DB_PORT` | `5432` | Puerto interno de Postgres |
+| `DB_USER` | `postgres` | Usuario de la BD |
+| `DB_PASSWORD` | `postgres` | Contraseña |
+| `DB_NAME` | `libreria` | Nombre de la BD |
+
+## Acceso a Swagger UI
+
+- Swagger UI interactivo: `http://localhost:4040/api-docs`
+- OpenAPI JSON: `http://localhost:4040/api-docs.json`

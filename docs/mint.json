@@ -1,0 +1,32 @@
+{
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Librería API",
+    "favicon": "/favicon.svg",
+    "colors": {
+        "primary": "#0F766E",
+        "light": "#14B8A6",
+        "dark": "#115E59"
+    },
+    "navigation": [
+        {
+            "group": "API Reference",
+            "pages": [
+                "api-reference/autores/list",
+                "api-reference/libros/list"
+            ]
+        }
+    ],
+    "openapi": [
+        "openapi.json"
+    ],
+    "api": {
+        "baseUrl": [
+            "http://localhost:4040",
+            "https://placeholder.trycloudflare.com"
+        ],
+        "playground": {
+            "mode": "show",
+            "disableProxy": true
+        }
+    }
+}

@@ -1,0 +1,34 @@
+
+---
+title: "Configuración Docker"
+description: "Servicios, puertos, volúmenes y healthchecks del proyecto"
+icon: "docker"
+---
+
+## Servicios
+
+### `db` — PostgreSQL 16
+
+- Imagen `postgres:16-alpine`
+- Volumen `postgres_data` para persistencia
+- Healthcheck combinado: `pg_isready` + `SELECT 1` real sobre la base `libreria`
+
+### `api` — Node.js + Express
+
+- Build desde `Dockerfile` local
+- Puerto `4040:4040` mapeado al host
+- `depends_on: db` con `condition: service_healthy`
+- Healthcheck propio: `GET /health`
+
+## Variables de entorno (servicio `api`)
+
+| Variable | Valor |
+|---|---|
+| `PORT` | `4040` |
+| `DB_HOST` | `db` |
+| `DB_PORT` | `5432` |
+| `DB_USER` | `postgres` |
+| `DB_PASSWORD` | `postgres` |
+| `DB_NAME` | `libreria` |
+
+> Las tablas las crea la API misma con `sequelize.sync({ alter: true })` al arrancar — no Postgres.

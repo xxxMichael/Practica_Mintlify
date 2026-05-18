@@ -1,0 +1,49 @@
+---
+title: "Listar autores"
+description: "Devuelve todos los autores registrados"
+openapi: "GET /autores"
+---
+
+Recupera la lista completa de autores, ordenada por `id` ascendente. No recibe parámetros.
+
+## Ejemplos de request
+
+<CodeGroup>
+curl http://localhost:4040/autores
+
+const res = await fetch("http://localhost:4040/autores");
+
+const json = await res.json();
+
+console.log([json.data](http://json.data));
+</CodeGroup>
+
+## Respuesta exitosa — 200 OK
+
+{
+
+	"success": true,
+	
+	"data": [
+	
+		{
+		
+			"id": 1,
+			
+			"nombre": "Gabriel Garcia Marquez",
+			
+			"biografia": "Novelista colombiano.",
+			
+			"created_at": "2026-05-09T18:00:00.000Z"
+		
+		}
+		
+	]
+
+}
+
+## Errores
+
+| Status | `error.code` | Causa |
+|---|---|---|
+| 500 | `AUTORES_LIST_ERROR` | Error interno al consultar |
