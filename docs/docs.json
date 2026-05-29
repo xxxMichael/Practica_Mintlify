@@ -24,6 +24,12 @@
           "errores",
           "docker"
         ]
+      },
+      {
+        "group": "Changelog",
+        "pages": [
+          "changelog/overview"
+        ]
       }
     ]
   }
